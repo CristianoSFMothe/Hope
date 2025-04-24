@@ -1,0 +1,68 @@
+{
+  "create": {
+    "name": "lar esperança",
+    "description": "esta organização oferece cuidados abrangentes para crianças de 0 a 12 anos, fornecendo suporte psicológico, atividades educacionais e programas recreativos projetados para promover o crescimento emocional e o desenvolvimento acadêmico em um ambiente seguro e acolhedor.",
+    "opening_hours": "segunda a domingo: 08:00–12:00, 13:30–17:30",
+    "open_on_weekends": "Sim"
+  },
+  "other": {
+    "name": "casa do sorriso",
+    "description": "dedicada a apoiar crianças e adolescentes vulneráveis, esta instituição oferece oficinas de arte, programas esportivos e iniciativas de mentoria voltadas para a construção da autoestima, habilidades sociais e senso de comunidade por meio de atividades criativas e físicas.",
+    "opening_hours": "terça a sábado: 09:00–12:00, 14:00–18:00",
+    "open_on_weekends": "Não"
+  },
+  "other2": {
+    "name": "refúgio infantil",
+    "description": "providenciando abrigo emergencial e cuidados para bebês e crianças de até 6 anos, este centro opera com uma equipe multidisciplinar de pediatras, assistentes sociais e especialistas em desenvolvimento infantil para garantir proteção imediata e bem-estar.",
+    "opening_hours": "segunda a domingo: 24 horas (plantão)",
+    "open_on_weekends": "Sim"
+  },
+  "other3": {
+    "name": "abrigo vida nova",
+    "description": "este programa foca na reintegração familiar e em oficinas de capacitação profissional para adolescentes, oferecendo treinamento vocacional, serviços de aconselhamento e educação de habilidades para a vida a fim de prepará-los para a vida adulta independente.",
+    "opening_hours": "segunda a sexta: 07:30–11:30, 12:30–16:30",
+    "open_on_weekends": "Não"
+  },
+  "other4": {
+    "name": "morada da criança",
+    "description": "um projeto educacional integrado que oferece reforço escolar, exames médicos, orientação nutricional e suporte psicológico às crianças necessitadas, visando promover desenvolvimento holístico e sucesso acadêmico em uma comunidade acolhedora.",
+    "opening_hours": "quarta a domingo: 10:00–13:00, 14:30–19:00",
+    "open_on_weekends": "Sim"
+  },
+  "other5": {
+    "name": "santuário da infância",
+    "description": "programa residencial de longa permanência com ênfase em cuidados de saúde mental, terapia recreativa e rotinas diárias estruturadas para apoiar a cura emocional e a integração social de crianças e adolescentes em um ambiente estável e solidário.",
+    "opening_hours": "segunda, quarta e sexta: 08:00–12:00, 13:00–17:00",
+    "open_on_weekends": "Não"
+  },
+  "other6": {
+    "name": "lar da alegria",
+    "description": "especializado em cuidar de crianças com necessidades especiais, este local oferece fisioterapia personalizada, terapia ocupacional, atividades esportivas inclusivas e suporte educacional individualizado para aumentar a independência e qualidade de vida de cada criança.",
+    "opening_hours": "terça e quinta: 08:30–12:30, 14:00–18:00",
+    "open_on_weekends": "Não"
+  },
+  "other7": {
+    "name": "refúgio dos sonhos",
+    "description": "oferecendo sessões de arteterapia, reforço acadêmico e programas de integração social para jovens em situação de risco, este centro visa fomentar criatividade, resiliência e desempenho escolar por meio de atividades terapêuticas e educacionais estruturadas.",
+    "opening_hours": "segunda a sexta: 09:00–12:00, 13:00–17:00",
+    "open_on_weekends": "Não"
+  },
+  "other8": {
+    "name": "casa do abraço",
+    "description": "proporcionando suporte psicossocial e oficinas esportivas para adolescentes, este abrigo concentra-se em aconselhamento de saúde mental, exercícios de trabalho em equipe e sessões de coaching de vida para capacitar jovens em situações vulneráveis.",
+    "opening_hours": "segunda a sábado: 08:00–12:00, 14:00–18:00",
+    "open_on_weekends": "Sim"
+  },
+  "other9": {
+    "name": "espaço criança feliz",
+    "description": "este programa oferece atividades lúdicas de aprendizado, monitoramento nutricional e iniciativas de engajamento familiar para crianças de 1 a 10 anos, visando criar um ambiente alegre que promova saúde física, desenvolvimento cognitivo e bem-estar emocional.",
+    "opening_hours": "quarta a sexta: 09:30–12:30, 14:30–17:30",
+    "open_on_weekends": "Não"
+  },
+  "other10": {
+    "name": "acolher com amor",
+    "description": "esta instituição oferece acolhimento temporário a crianças em situação de vulnerabilidade, fornecendo suporte emocional, atividades educativas e acompanhamento familiar para promover o reencontro seguro com parentes ou a inserção em lares substitutos, sempre em um ambiente de respeito e afeto.",
+    "opening_hours": "segunda a sexta: 08:00–12:00, 13:00–17:00",
+    "open_on_weekends": "Não"
+  }
+}
