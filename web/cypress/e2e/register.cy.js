@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 import data from '../fixtures/orphanages.json'
 import createPage from '../support/pages/create'
+import mapPage from '../support/pages/map'
 
 describe('Cadastro de orfanatos', () => {
   it('deve cadastrar um novo orfanato', () => {
@@ -17,7 +18,7 @@ describe('Cadastro de orfanatos', () => {
 
     createPage.submit()
 
-    createPage.popup.haveText('Orfanato cadastrado com sucesso.')
+    mapPage.popup.haveText('Orfanato cadastrado com sucesso.')
 
   });
 
@@ -36,7 +37,7 @@ describe('Cadastro de orfanatos', () => {
 
     createPage.submit()
 
-    createPage.popup.haveText('Já existe um cadastro com o nome: ' + orphanage.name)
+    mapPage.popup.haveText('Já existe um cadastro com o nome: ' + orphanage.name)
 
   });
 
