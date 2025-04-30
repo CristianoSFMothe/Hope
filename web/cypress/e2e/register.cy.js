@@ -2,6 +2,8 @@
 /* eslint-disable no-undef */
 import data from '../fixtures/orphanages.json'
 
+import { faker } from "@faker-js/faker";
+
 describe('Cadastro de orfanatos', () => {
   it('deve cadastrar um novo orfanato', () => {
     const orphanage = data.create
@@ -12,10 +14,12 @@ describe('Cadastro de orfanatos', () => {
       .should('be.visible')
       .and('have.text', 'Cadastro')
 
+    cy.setMapPosition(orphanage.position)
+
     cy.contains('label', 'Nome')
       .parent()
       .find('input')
-      .type(orphanage.name)
+      .type(orphanage.name + ' ' + faker.company.name())
 
     cy.get('#description').type(orphanage.description)
 
@@ -43,4 +47,9 @@ Cypress.Commands.add('visitWithMockGeolocation', (url, latitude = Cypress.env('L
       mockGeolocation(win, latitude, longitude);
     }
   })
+});
+
+Cypress.Commands.add('setMapPosition', (position) => {
+  window.localStorage.setItem('hope-qa:latitude', position.latitude);
+  window.localStorage.setItem('hope-qa:longitude', position.longitude);
 });

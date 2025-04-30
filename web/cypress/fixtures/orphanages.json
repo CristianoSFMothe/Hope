@@ -3,25 +3,41 @@
     "name": "lar esperança",
     "description": "esta organização oferece cuidados abrangentes para crianças de 0 a 12 anos, fornecendo suporte psicológico, atividades educacionais e programas recreativos projetados para promover o crescimento emocional e o desenvolvimento acadêmico em um ambiente seguro e acolhedor.",
     "opening_hours": "segunda a domingo: 08:00–12:00, 13:30–17:30",
-    "open_on_weekends": "Sim"
+    "open_on_weekends": "Sim",
+    "position": {
+      "latitude": -22.8279308,
+      "longitude": -43.6051212
+    }
   },
   "other": {
     "name": "casa do sorriso",
     "description": "dedicada a apoiar crianças e adolescentes vulneráveis, esta instituição oferece oficinas de arte, programas esportivos e iniciativas de mentoria voltadas para a construção da autoestima, habilidades sociais e senso de comunidade por meio de atividades criativas e físicas.",
     "opening_hours": "terça a sábado: 09:00–12:00, 14:00–18:00",
-    "open_on_weekends": "Não"
+    "open_on_weekends": "Não",
+    "position": {
+      "latitude": -22.830869,
+      "longitude": -43.619481
+    }
   },
   "other2": {
     "name": "refúgio infantil",
     "description": "providenciando abrigo emergencial e cuidados para bebês e crianças de até 6 anos, este centro opera com uma equipe multidisciplinar de pediatras, assistentes sociais e especialistas em desenvolvimento infantil para garantir proteção imediata e bem-estar.",
     "opening_hours": "segunda a domingo: 24 horas (plantão)",
-    "open_on_weekends": "Sim"
+    "open_on_weekends": "Sim",
+    "position": {
+      "latitude": -22.830058,
+      "longitude": -43.6063919
+    }
   },
   "other3": {
     "name": "abrigo vida nova",
     "description": "este programa foca na reintegração familiar e em oficinas de capacitação profissional para adolescentes, oferecendo treinamento vocacional, serviços de aconselhamento e educação de habilidades para a vida a fim de prepará-los para a vida adulta independente.",
     "opening_hours": "segunda a sexta: 07:30–11:30, 12:30–16:30",
-    "open_on_weekends": "Não"
+    "open_on_weekends": "Não",
+    "position": {
+      "latitude": -22.797363,
+      "longitude": -43.6454229
+    }
   },
   "other4": {
     "name": "morada da criança",
