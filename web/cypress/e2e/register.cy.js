@@ -1,77 +1,43 @@
 
 /* eslint-disable no-undef */
 import data from '../fixtures/orphanages.json'
+import createPage from '../support/pages/create'
 
 describe('Cadastro de orfanatos', () => {
   it('deve cadastrar um novo orfanato', () => {
     const orphanage = data.create
 
-    cy.deleteMany({ name: orphanage.name }, { collection: 'orphanages' })
+    createPage.delete(orphanage.name, 'orphanages')
 
-    cy.goto('http://localhost:3000/orphanages/create');
-
-    cy.get('legend')
-      .should('be.visible')
-      .and('have.text', 'Cadastro')
+    createPage.go()
 
     cy.setMapPosition(orphanage.position)
 
-    cy.contains('label', 'Nome')
-      .parent()
-      .find('input')
-      .type(orphanage.name)
+    createPage.form(orphanage)
 
-    cy.get('#description').type(orphanage.description)
+    createPage.submit()
 
-    cy.get('input[type=file]')
-      .selectFile("cypress/fixtures/images/kids-playground-1.png", { force: true })
+    createPage.popup.haveText('Orfanato cadastrado com sucesso.')
 
-    cy.get('#opening_hours').type(orphanage.opening_hours)
-
-    cy.contains('button', orphanage.open_on_weekends).click()
-
-    cy.get('.save-button').should('be.visible').click()
-
-    cy.get('.swal2-html-container')
-      .should('be.visible')
-      .and('have.text', 'Orfanato cadastrado com sucesso.')
   });
 
-  it.only('não deve cadastrar orfanato nome duplicado', () => {
+  it('não deve cadastrar orfanato nome duplicado', () => {
     const orphanage = data.duplicate
 
-    cy.deleteMany({ name: orphanage.name }, { collection: 'orphanages' })
-    // Primeiro cadastro
-    cy.postOrphanage(orphanage)
+    createPage.delete(orphanage.name, 'orphanages')
 
-    // Segundo cadastro
-    cy.goto('http://localhost:3000/orphanages/create');
+    createPage.postOrphanage(orphanage)
 
-    cy.get('legend')
-      .should('be.visible')
-      .and('have.text', 'Cadastro')
+    createPage.go()
 
     cy.setMapPosition(orphanage.position)
 
-    cy.contains('label', 'Nome')
-      .parent()
-      .find('input')
-      .type(orphanage.name)
+    createPage.form(orphanage)
 
-    cy.get('#description').type(orphanage.description)
+    createPage.submit()
 
-    cy.get('input[type=file]')
-      .selectFile("cypress/fixtures/images/kids-playground-1.png", { force: true })
+    createPage.popup.haveText('Já existe um cadastro com o nome: ' + orphanage.name)
 
-    cy.get('#opening_hours').type(orphanage.opening_hours)
-
-    cy.contains('button', orphanage.open_on_weekends).click()
-
-    cy.get('.save-button').should('be.visible').click()
-
-    cy.get('.swal2-html-container')
-      .should('be.visible')
-      .and('have.text', 'Já existe um cadastro com o nome: ' + orphanage.name)
   });
 
 });
