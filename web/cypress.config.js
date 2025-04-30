@@ -1,19 +1,18 @@
+const { configurePlugin } = require("cypress-mongodb");
 const { defineConfig } = require("cypress");
-const { cypressBrowserPermissionsPlugin } = require('cypress-browser-permissions');
 
 module.exports = defineConfig({
   projectId: "t5ndpt",
   e2e: {
     setupNodeEvents(on, config) {
-      config = cypressBrowserPermissionsPlugin(on, config);
+      configurePlugin(on)
 
-      return config
+      config.env.mongodb = {
+        uri: config.env.MONGO_URI || '',
+        database: config.env.MONGO_DATABASE || '',
+      };
+
+      return config;
     },
-    env: {
-      browserPermissions: {
-        geolocation: 'allow',
-        notifications: 'allow',
-      }
-    }
   },
 });

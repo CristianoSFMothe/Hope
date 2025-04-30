@@ -2,11 +2,11 @@
 /* eslint-disable no-undef */
 import data from '../fixtures/orphanages.json'
 
-import { faker } from "@faker-js/faker";
-
 describe('Cadastro de orfanatos', () => {
   it('deve cadastrar um novo orfanato', () => {
     const orphanage = data.create
+
+    cy.deleteMany({ name: orphanage.name }, { collection: 'orphanages' })
 
     cy.visitWithMockGeolocation('http://localhost:3000/orphanages/create');
 
@@ -19,7 +19,7 @@ describe('Cadastro de orfanatos', () => {
     cy.contains('label', 'Nome')
       .parent()
       .find('input')
-      .type(orphanage.name + ' ' + faker.company.name())
+      .type(orphanage.name)
 
     cy.get('#description').type(orphanage.description)
 
