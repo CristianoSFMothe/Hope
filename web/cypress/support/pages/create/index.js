@@ -1,4 +1,6 @@
 import popup from "../components/popup";
+// const element = require('../../elements/create').create
+const element = require('../../elements/create').create
 
 /* eslint-disable no-undef */
 class CreatePage {
@@ -21,18 +23,18 @@ class CreatePage {
       .find('input')
       .type(orphanage.name)
 
-    cy.get('#description').type(orphanage.description)
+    cy.get(element.inputDescription).type(orphanage.description)
 
-    cy.get('input[type=file]')
+    cy.get(element.fileImage)
       .selectFile("cypress/fixtures/images/kids-playground-1.png", { force: true })
 
-    cy.get('#opening_hours').type(orphanage.opening_hours)
+    cy.get(element.openingHours).type(orphanage.opening_hours)
 
     cy.contains('button', orphanage.open_on_weekends).click()
   }
 
   submit() {
-    cy.get('.save-button').should('be.visible').click()
+    cy.get(element.saveButton).should('be.visible').click()
   }
 
   postOrphanage(orphanage) {
