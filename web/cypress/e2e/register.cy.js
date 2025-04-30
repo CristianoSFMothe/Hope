@@ -8,7 +8,7 @@ describe('Cadastro de orfanatos', () => {
 
     cy.deleteMany({ name: orphanage.name }, { collection: 'orphanages' })
 
-    cy.visitWithMockGeolocation('http://localhost:3000/orphanages/create');
+    cy.goto('http://localhost:3000/orphanages/create');
 
     cy.get('legend')
       .should('be.visible')
@@ -31,25 +31,69 @@ describe('Cadastro de orfanatos', () => {
     cy.contains('button', orphanage.open_on_weekends).click()
 
     cy.get('.save-button').should('be.visible').click()
+
+    cy.get('.swal2-html-container')
+      .should('be.visible')
+      .and('have.text', 'Orfanato cadastrado com sucesso.')
   });
-});
 
+  it.only('não deve cadastrar orfanato nome duplicado', () => {
+    const orphanage = data.duplicate
 
-Cypress.Commands.add('visitWithMockGeolocation', (url, latitude = Cypress.env('LATITUDE'), longitude = Cypress.env('LONGITUDE')) => {
-  const mockGeolocation = (win, latitude, longitude) => {
-    cy.stub(win.navigator.geolocation, 'getCurrentPosition', cb => {
-      return cb({ coords: { latitude, longitude } })
-    })
-  }
+    cy.deleteMany({ name: orphanage.name }, { collection: 'orphanages' })
+    // Primeiro cadastro
+    cy.goto('http://localhost:3000/orphanages/create');
 
-  cy.visit(url, {
-    onBeforeLoad: (win) => {
-      mockGeolocation(win, latitude, longitude);
-    }
-  })
-});
+    cy.get('legend')
+      .should('be.visible')
+      .and('have.text', 'Cadastro')
 
-Cypress.Commands.add('setMapPosition', (position) => {
-  window.localStorage.setItem('hope-qa:latitude', position.latitude);
-  window.localStorage.setItem('hope-qa:longitude', position.longitude);
+    cy.setMapPosition(orphanage.position)
+
+    cy.contains('label', 'Nome')
+      .parent()
+      .find('input')
+      .type(orphanage.name)
+
+    cy.get('#description').type(orphanage.description)
+
+    cy.get('input[type=file]')
+      .selectFile("cypress/fixtures/images/kids-playground-1.png", { force: true })
+
+    cy.get('#opening_hours').type(orphanage.opening_hours)
+
+    cy.contains('button', orphanage.open_on_weekends).click()
+
+    cy.get('.save-button').should('be.visible').click()
+
+    // Segundo cadastro
+    cy.goto('http://localhost:3000/orphanages/create');
+
+    cy.get('legend')
+      .should('be.visible')
+      .and('have.text', 'Cadastro')
+
+    cy.setMapPosition(orphanage.position)
+
+    cy.contains('label', 'Nome')
+      .parent()
+      .find('input')
+      .type(orphanage.name)
+
+    cy.get('#description').type(orphanage.description)
+
+    cy.get('input[type=file]')
+      .selectFile("cypress/fixtures/images/kids-playground-1.png", { force: true })
+
+    cy.get('#opening_hours').type(orphanage.opening_hours)
+
+    cy.contains('button', orphanage.open_on_weekends).click()
+
+    cy.get('.save-button').should('be.visible').click()
+
+    cy.get('.swal2-html-container')
+      .should('be.visible')
+      .and('have.text', 'Já existe um cadastro com o nome: ' + orphanage.name)
+  });
+
 });
