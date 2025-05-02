@@ -21,7 +21,7 @@
     },
     "image": "kids-playground-8.png"
   },
-  "other2": {
+  "map": {
     "name": "refúgio infantil",
     "description": "providenciando abrigo emergencial e cuidados para bebês e crianças de até 6 anos, este centro opera com uma equipe multidisciplinar de pediatras, assistentes sociais e especialistas em desenvolvimento infantil para garantir proteção imediata e bem-estar.",
     "opening_hours": "segunda a domingo: 24 horas (plantão)",
@@ -29,7 +29,8 @@
     "position": {
       "latitude": -22.830058,
       "longitude": -43.6063919
-    }
+    },
+    "image": "kids-playground-3.png"
   },
   "other3": {
     "name": "abrigo vida nova",
