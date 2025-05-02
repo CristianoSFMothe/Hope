@@ -32,7 +32,7 @@
     },
     "image": "kids-playground-3.png"
   },
-  "other3": {
+  "required": {
     "name": "abrigo vida nova",
     "description": "este programa foca na reintegração familiar e em oficinas de capacitação profissional para adolescentes, oferecendo treinamento vocacional, serviços de aconselhamento e educação de habilidades para a vida a fim de prepará-los para a vida adulta independente.",
     "opening_hours": "segunda a sexta: 07:30–11:30, 12:30–16:30",
@@ -40,7 +40,8 @@
     "position": {
       "latitude": -22.797363,
       "longitude": -43.6454229
-    }
+    },
+    "image": "kids-playground-1.png"
   },
   "other4": {
     "name": "morada da criança",
