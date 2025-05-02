@@ -9,38 +9,7 @@ describe('mapa', () => {
 
     cy.postOrphanage(orphanage)
 
-    cy.goto('/map')
-
-    cy.get('.leaflet-marker-icon').as('mapList')
-
-    cy.get('@mapList')
-      .each((ele, index, list) => {
-        cy.get('@mapList')
-          .eq(index)
-          .click({ force: true })
-        cy.wait(1000)
-
-        cy.get('.leaflet-popup-content').as('divName')
-
-        cy.get('@divName')
-          .invoke('text')
-          .then((txt) => {
-            cy.log(txt)
-            if (txt === orphanage.name) {
-              cy.get('@mapList')
-                .eq(index)
-                .as('foundItem')
-            }
-          })
-      })
-
-    cy.get('@foundItem')
-      .click({ force: true })
-
-    cy.contains('.leaflet-popup-content', orphanage.name)
-      .should('be.visible')
-      .find('a')
-      .click({ force: true })
+    cy.openOrphanage(orphanage.name)
 
     cy.contains('h1', orphanage.name)
       .should('have.text', orphanage.name)
