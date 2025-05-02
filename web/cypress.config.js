@@ -15,5 +15,8 @@ module.exports = defineConfig({
       return config;
     },
     baseUrl: "http://localhost:3000",
+    env: {
+      baseApi: "http://localhost:3333",
+    }
   },
 });

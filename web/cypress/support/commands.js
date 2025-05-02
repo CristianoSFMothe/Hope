@@ -36,7 +36,7 @@ Cypress.Commands.add('postOrphanage', (orphanage) => {
 
       cy.api({
         method: "POST",
-        url: "http://localhost:3333/orphanages",
+        url: `${Cypress.env('baseApi')}/orphanages`,
         headers: {
           "Content-type": "multipart/form-data"
         },

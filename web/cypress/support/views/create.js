@@ -2,7 +2,7 @@
 const element = require('../elements/create').create
 
 Cypress.Commands.add('gotoCreate', () => {
-  cy.goto('http://localhost:3000/orphanages/create');
+  cy.goto('/orphanages/create');
 
   cy.get('legend')
     .should('be.visible')
