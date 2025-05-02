@@ -36,3 +36,11 @@ Cypress.Commands.add('openOrphanage', (name) => {
     .find('a')
     .click({ force: true })
 });
+
+
+Cypress.Commands.add('googleMapLink', (position) => {
+  const googleUrl = `https://www.google.com/maps/dir/?api=1&destination=${position.latitude},${position.longitude}`
+
+  cy.contains('a', 'Ver rotas no Google Maps')
+    .should('have.attr', 'href', googleUrl)
+});
