@@ -35,7 +35,7 @@ Cypress.Commands.add('createOrphanage', (orphanage) => {
     cy.get(element.openingHours).type(orphanage.opening_hours) :
     cy.log('Empty field opening hours')
 
-  cy.contains('button', orphanage.open_on_weekends).click()
+  cy.contains('button', orphanage.open_on_weekends ? 'Sim' : 'Não').click()
 
   cy.get(element.saveButton).should('be.visible').click({ force: true })
 });
