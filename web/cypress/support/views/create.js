@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 const element = require('../elements/create').create
 
-Cypress.Commands.add('gotoCreate', () => {
-  cy.goto('/orphanages/create');
+Cypress.Commands.add('gotoCreate', (position) => {
+  cy.goto('/orphanages/create', position.latitude, position.longitude);
 
   cy.get('legend')
     .should('be.visible')
