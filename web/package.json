@@ -12,7 +12,8 @@
     "cy:open:mobile": "cypress open --config viewportWidth=410,viewportHeight=860",
     "test:cypress": "cypress run",
     "test:mobile": "cypress run --config viewportWidth=410,viewportHeight=860",
-    "test:cloud": "cypress run --record"
+    "test:cloud": "cypress run --record",
+    "allure:serve": "npx allure serve"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,6 +48,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@faker-js/faker": "^9.7.0",
+    "allure-commandline": "^2.34.0",
     "cypress": "^13.3.0",
     "cypress-mongodb": "^6.2.1"
   }

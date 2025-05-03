@@ -3,10 +3,15 @@ require("dotenv").config();
 const { configurePlugin } = require("cypress-mongodb");
 const { defineConfig } = require("cypress");
 
+const { configureAllureAdapterPlugins } = require('@mmisty/cypress-allure-adapter/plugins');
+
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
+      configureAllureAdapterPlugins(on, config);
       configurePlugin(on)
+      
+      return config;
     },
     specPattern: [
       './cypress/support/hooks/index.cy.js',
@@ -14,6 +19,7 @@ module.exports = defineConfig({
     ],
     baseUrl: process.env.BASE_URL,
     env: {
+      allure: true,
       baseApi: process.env.BASE_API,
       mongodb: {
         uri: process.env.MONGO_URI,

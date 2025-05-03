@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@mmisty/cypress-allure-adapter": "^3.2.3"
   }
 }
