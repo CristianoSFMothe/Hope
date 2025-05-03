@@ -4,9 +4,6 @@ import data from '../fixtures/orphanages.json'
 import { generator } from '../support/factory'
 
 describe('Cadastro de orfanatos', () => {
-  before(() => {
-    cy.dropCollection('orphanages')
-  })
 
   context('cadastro com sucesso', () => {
     it('deve cadastrar um novo orfanato', () => {

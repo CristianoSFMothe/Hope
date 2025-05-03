@@ -8,6 +8,10 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       configurePlugin(on)
     },
+    specPattern: [
+      './cypress/support/hooks/index.cy.js',
+      './cypress/e2e/**'
+    ],
     baseUrl: process.env.BASE_URL,
     env: {
       baseApi: process.env.BASE_API,
